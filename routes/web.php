@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
     
     // Stripe
     Route::get('/payment-payment', [StripeController::class, 'index'])->name('payment-payment');
+    Route::post('/payment/one-couse', [StripeController::class, 'checkout'])->name('one-couse');
 
 });
 

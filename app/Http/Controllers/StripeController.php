@@ -13,7 +13,7 @@ class StripeController extends Controller
      */
     public function index()
     {
-        return view('/payment');
+        return view('/payment.payment');
     }
 
     /**
@@ -86,7 +86,7 @@ class StripeController extends Controller
             ],
             'mode' => 'payment', // the mode  of payment
             'success_url' => route('dashboard'), // route when success 
-            'cancel_url' => route('stripe.payement'), // route when  failed or canceled
+            'cancel_url' => route('/payement.payement'), // route when  failed or canceled
         ]);
 
         return redirect()->away($session->url);
